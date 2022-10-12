@@ -19,21 +19,21 @@ for method in methods:
     response_put = requests.put("https://playground.learnqa.ru/ajax/api/compare_query_type", data={"method": method})
 
     if response_get.text == '{"success":"!"}' and method != "GET":
-        print(wrong_answer.format("post", method, response_get.text))
+        print(wrong_answer.format("get", method, response_get.text))
     elif response_get.text != '{"success":"!"}' and method == "GET":
         print(wrong_answer.format("get", method, response_get.text))
 
     if response_post.text == '{"success":"!"}' and method != "POST":
-        print(wrong_answer.format("post", method, response_get.text))
+        print(wrong_answer.format("post", method, response_post.text))
     elif response_post.text != '{"success":"!"}' and method == "POST":
-        print(wrong_answer.format("post", method, response_get.text))
+        print(wrong_answer.format("post", method, response_post.text))
 
     if response_delete.text == '{"success":"!"}' and method != "DELETE":
-        print(wrong_answer.format("delete", method, response_get.text))
+        print(wrong_answer.format("delete", method, response_delete.text))
     elif response_delete.text != '{"success":"!"}' and method == "DELETE":
-        print(wrong_answer.format("delete", method, response_get.text))
+        print(wrong_answer.format("delete", method, response_delete.text))
 
     if response_put.text == '{"success":"!"}' and method != "PUT":
-        print(wrong_answer.format("put", method, response_get.text))
+        print(wrong_answer.format("put", method, response_put.text))
     elif response_put.text != '{"success":"!"}' and method == "PUT":
-        print(wrong_answer.format("put", method, response_get.text))
+        print(wrong_answer.format("put", method, response_put.text))
